@@ -2,6 +2,8 @@
 
 Pretty-print TypeScript errors in a Neovim floating window using [@pretty-ts-errors/formatter](https://github.com/yoavbls/pretty-ts-errors).
 
+<img width="912" height="744" alt="nvim-pretty-ts-error-demo" src="https://github.com/user-attachments/assets/4c139ba4-7351-416f-87bf-54f431301f0d" />
+
 ## Prerequisites
 - Node.js & `npm install -g neovim`
 - Treesitter parsers: `markdown`, `markdown_inline`
