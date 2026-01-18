@@ -3,6 +3,10 @@ local diagnostic_win_id = nil
 local diagnostic_buf_id = nil
 local ns_id = vim.api.nvim_create_namespace("PrettyTsFormatDiagnostic")
 
+local config = {
+	border = "none",
+}
+
 local manage_diag_win = vim.api.nvim_create_augroup("ManageDiagnosticWindow", { clear = true })
 local last_win = nil
 
@@ -203,6 +207,7 @@ local function show_line_diagnostics()
 		width = width,
 		height = height,
 		style = "minimal",
+		border = config.border,
 	})
 
 	vim.api.nvim_set_option_value("wrap", true, { win = diagnostic_win_id })
@@ -220,6 +225,11 @@ local function show_line_diagnostics()
 	})
 end
 
+local function setup(opts)
+	config = vim.tbl_deep_extend("force", config, opts or {})
+end
+
 return {
+	setup = setup,
 	show_line_diagnostics = show_line_diagnostics,
 }

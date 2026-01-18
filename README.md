@@ -14,6 +14,7 @@ Pretty-print TypeScript errors in a Neovim floating window using [@pretty-ts-err
 {
   "enochchau/nvim-pretty-ts-errors",
   build = "npm install",
+  opts = { border = "rounded" }, -- "rounded", "double", "single", "solid", "shadow", "none"
 }
 ```
 *Note: You may need to run `:UpdateRemotePlugins` and restart Neovim after installation.*
